@@ -1,0 +1,56 @@
+* {
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0; 
+    background-color: gray;
+}
+li,a,button {
+    text-decoration: none;
+    list-style: none;
+    font-weight: 500;
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+}
+header {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ padding: 30px 10%;
+
+
+}
+.logo {
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.navlink{
+    list-style: none;
+}
+.navlink li{
+   display: inline-block;
+   padding: 0 20px;
+}
+.navlink li a {
+transition: all 0.3s ease 0s;
+
+}
+.navlink li a:hover {
+    transition: all 0.3s ease 0s;
+    color: aquamarine;
+}
+button{
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: burlywood;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+}
+button:hover{
+    background-color: aquamarine;
+    transition: all 0.3s ease 0s;
+}

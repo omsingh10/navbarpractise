@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Navbar</title>
+    
+</head>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    padding-top: 60px; /* To prevent content from being hidden behind navbar */
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    background: rgba(0, 0, 0, 0.7);
+    margin-top: 10px;
+    padding: 15px 20px;
+    border-radius: 15px;
+    transition: top 0.3s ease-in-out;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+
+.hidden {
+    top: -100px;
+}
+
+ 
+</style>
+<body>
+
+    <nav id="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1>Scroll Down to Hide Navbar</h1>
+        <p>Keep scrolling to see the effect...</p>
+        <p style="margin-bottom: 2000px;">More content here...</p>
+    </div>
+
+
+    <script >
+
+        let lastScrollTop = 0;
+const navbar = document.getElementById("navbar");
+
+window.addEventListener("scroll", function () {
+    let scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+        // Scrolling down
+        navbar.classList.add("hidden");
+    } else {
+        // Scrolling up
+        navbar.classList.remove("hidden");
+    }
+
+    lastScrollTop = scrollTop;
+});
+
+    </script>
+</body>
+</html>
