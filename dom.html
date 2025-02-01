@@ -29,38 +29,7 @@ const addElementButton = document.getElementById('addElementButton');
 const container = document.getElementById('container');
 const word = document.getElementById('word');
 
-// Change the text content of the header
-header.textContent = 'Welcome to the DOM!';
 
-// Modify the content of the paragraph when the button is clicked
-changeButton.addEventListener('click', function() {
-    intro.textContent = 'The content has been changed dynamically!';
-});
-
-// Add a new element (a paragraph) to the container when clicked
-addElementButton.addEventListener('click', function() {
-    const newParagraph = document.createElement('p');
-    newParagraph.textContent = 'This is a new paragraph added dynamically!';
-    container.appendChild(newParagraph);
-}
-);
-
-addElementButton.addEventListener('click', function() {
-    const newword = document.createElement('p');
-    newword.textContent = 'Hello';
-    container.appendChild(newword);
-
-}
-);
-
-const wordElement = document.getElementById('word');
-const addNewWordButton = document.getElementById('addnewword');
-
-// Event listener for the "Add New Word" button
-addNewWordButton.addEventListener('click', function() {
-    // Change the text content of the "word" paragraph
-    wordElement.textContent = 'You clicked on wrong button'; // Replace 'new word' with whatever word you'd like
-});
 
 const power = document.getElementById('power');
 const addPowerButton = document.getElementById('powerbtn');
@@ -69,6 +38,19 @@ const addPowerButton = document.getElementById('powerbtn');
 addPowerButton.addEventListener('click', function() {
     power.textContent = 'powergained';
 });
+
+let isPowerGained = false; // False means "power", true means "powergained"
+
+// Event listener for the "power" button to toggle the text
+addPowerButton.addEventListener('click', function() {
+    if (isPowerGained) {
+        power.textContent = 'power'; // Undo the change
+        isPowerGained = false; // Set state to "power"
+    } else {
+        power.textContent = 'powergained'; // Change to "powergained"
+        isPowerGained = true; // Set state to "powergained"
+    }
+})
 
     </script>
 </body>
